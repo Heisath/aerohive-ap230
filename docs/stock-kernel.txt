@@ -1,0 +1,45 @@
+Starting kernel ...
+
+Uncompressing Linux... done, booting the kernel.
+L2C: platform provided aux values match the hardware, so have no effect.  Please remove them.
+L2C: platform provided aux values permit register corruption.
+Mounting local file systems...
+Do the DB init,please wait...
+jffs2: notice: (61) check_node_data: wrong data CRC in data node at 0x0ff92618: read 0x8349f877, calculated 0x9f7bfc65.
+ah_net: module license 'unspecified' taints kernel.
+Disabling lock debugging due to kernel taint
+jffs2: notice: (61) check_node_data: wrong data CRC in data node at 0x020642b4: read 0xbe751920, calculated 0x62845fab.
+Updating system config database...
+System coPOE Input Detection -> nfigDC
+ update complete.
+gmac_var_init: NAPI2_POLL mode
+Jumbo disabled
+Total Memory: 268435456B, Max number of active packets: 11650 cache->name: kmalloc-2304
+eth0: Broadcom BCM47XX 10/100/1000 Mbps Ethernet Controller 10.10.80.505_e5.1.2.3 (r659762)
+register sniffer device on interface eth0.
+eth1: Broadcom BCM47XX 10/100/1000 Mbps Ethernet Controller 10.10.80.505_e5.1.2.3 (r659762)
+register sniffer device on interface eth1.
+Jumbo disabled
+Total Memory: 268435456B, Max number of active packets: 11650 cache->name: kmalloc-2304
+Aerohive Wireless Extension 2.0.0 ... INIT!
+Jumbo disabled
+Jumbo disabled
+Aerohive Forwarding Engine module ... INIT!
+Image L7 repository version 5, checking existing L7 repository... ...
+Existing L7 repository version 5
+Nothing to be done or verified with L7 repository version 5
+
+
+Welcome to Aerohive Product
+
+ah-alpha login: admin
+Password:
+ah-alpha#_shell
+password:
+
+
+BusyBox v1.23.0 (2019-04-14 20:12:38 PDT) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+ah-alpha:/tmp/home/admin$ uname -a
+Linux ah-alpha 3.16.36 #1 SMP PREEMPT Thu Jan 9 23:02:02 PST 2020 armv7l GNU/Linux

@@ -1,0 +1,24 @@
+ah-alpha:/tmp/home/admin$ cat /proc/cpuinfo
+processor       : 0
+model name      : ARMv7 Processor rev 0 (v7l)
+BogoMIPS        : 1990.65
+Features        : swp half thumb fastmult edsp tls
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x3
+CPU part        : 0xc09
+CPU revision    : 0
+
+processor       : 1
+model name      : ARMv7 Processor rev 0 (v7l)
+BogoMIPS        : 1990.65
+Features        : swp half thumb fastmult edsp tls
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x3
+CPU part        : 0xc09
+CPU revision    : 0
+
+Hardware        : BCM94708
+Revision        : 0000
+Serial          : 0000000000000000

@@ -1,0 +1,73 @@
+U-Boot 2012.10 (Jan 09 2020 - 22:59:34)
+
+I2C:   ready
+Wait.
+Done.
+DEV ID= 0000cf12
+REV ID= 00000000
+SKU ID = 0
+OTP status: eca00018
+MEMC 0 DDR speed = 800MHz
+Log: ddr40_phy_init.c: Configuring DDR Controller PLLs
+Log: offset = 0x18010800
+Log: VCO_FREQ is 1600 which is greater than 1Ghz.
+Log: DDR Phy PLL polling for lock
+Log: DDR Phy PLL locked.
+Log: ddr40_phy_init::DDR PHY step size calibration complete.
+Log: ddr40_phy_init:: Virtual VttSetup onm CONNECT=0x01CF7FFF, OVERRIDE=0x00077FFF
+Log: ddr40_phy_init:: Virtual Vtt Enabled
+Log: DDR Controller PLL Configuration Complete
+PHY register dump after DDR PHY init
+PHY register dump after mode register write
+DRAM:  256 MiB
+WARNING: Caches not enabled
+GPIO Init ... Done
+Power Input Detection: DC adaptor, Drive GPIO17(USB 5V enable) success
+NAND:   NAND_FLASH_DEVICE_ID_ADDR = 18028194
+Done that
+(ONFI),  S34ML04G1, blocks per lun: 1000 lun count: 1
+
+*WARNING* Invalid strap options for this NAND: page=1 type=2
+Overriding invalid strap options: strap_type=2
+128 KiB blocks, 2 KiB pages, 16B OOB, 8-bit
+NAND:   chipsize 512 MiB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Unlocking L2 Cache ...Done
+arm_clk=1000MHz, axi_clk=500MHz, apb_clk=250MHz, arm_periph_clk=500MHz
+Net:   Registering eth
+Broadcom BCM IPROC Ethernet driver 0.1
+Using GMAC1 (0x18025000)
+et0: ethHw_chipAttach: Chip ID: 0xcf12; phyaddr: 0x1e
+bcm_robo_attach: devid: 0x53012
+bcmiproc_eth-0
+MAC address is d854:a2b6:aa40
+
+Reset TPM chip...
+Hit any key to stop autoboot:  0
+
+Loading kernel from device 0: nand0 (offset 0xa80000) ... done
+Loading rootfs from device 0: nand0 (offset 0x3780000) ... done
+## Booting kernel from Legacy Image at 01005000 ...
+   Image Name:   Linux-3.16.36
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    2581373 Bytes = 2.5 MiB
+   Load Address: 80008000
+   Entry Point:  80008000
+   Verifying Checksum ... OK
+## Loading init Ramdisk from Legacy Image at 02005000 ...
+   Image Name:   uboot initramfs rootfs
+   Image Type:   ARM Linux RAMDisk Image (uncompressed)
+   Data Size:    28647424 Bytes = 27.3 MiB
+   Load Address: 00000000
+   Entry Point:  00000000
+   Verifying Checksum ... OK
+Power off two PHY...
+   Loading Kernel Image ... OK
+OK
+boot_prep_linux commandline: root=/dev/ram console=ttyS0,9600 ramdisk_size=70000 cache-sram-size=0x10000
+
+Starting kernel ...

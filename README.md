@@ -32,8 +32,55 @@ T = transmit (ap230 to host)
 Beware the high signal level when using cheap usb converters!
 
 ## Accessing the UBoot 
-following shortly
+To access the uboot you have to connect to the console, reboot the device and press any key when prompted.
+The password for the uboot seems to be `AhNf?d@ta06` . 
+
+Beware when changing uboot env, when I used `saveenv` it corrupted the storage and I had to recover it.
+
+Full bootlog in docs/u-boot.txt
 
 ## Accessing the hidden shell
-following shortly
+To access the busybox shell use the hidden `_shell` command on the aerohive cli.
+The password needed can be generated with the keygen in tools/aerohive-keygen, it requires the serial number.
 
+## Partitions
+All data is stored on internal flash memory. It is seperated into 9 partitions:
+```
+cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00400000 00020000 "Uboot"
+mtd1: 00040000 00020000 "Uboot Env"
+mtd2: 00040000 00020000 "nvram"
+mtd3: 00060000 00020000 "Boot Info"
+mtd4: 00060000 00020000 "Static Boot Info"
+mtd5: 00040000 00020000 "Hardware Info"
+mtd6: 00a00000 00020000 "Kernel"
+mtd7: 05000000 00020000 "App Image"
+mtd8: 1a080000 00020000 "JFFS2"
+```
+
+The partitions can be read from the busybox shell with `dd` and written from shell with `mtd_debug`. Example for mtd7:
+```
+# read
+$dd if=/dev/mtd7 of=/f/partname
+
+#erase then write
+mtd_debug erase /dev/mtd7 83886080
+mtd_debug write /dev/mtd7 0 83886080 /f/partname
+```
+
+Alternatively they can be written from uboot: 
+```
+# get files via tftp
+setenv ipaddr 192.168.1.50
+setenv serverip 192.168.1.3
+tftpboot 0x81000000 partname
+
+# make sure to erase before write, calculate correct offsets from /proc/mtd
+nand erase 0xf80000 0x5000000
+nand write 0x81000000 0xf80000 0x5000000
+```
+
+## Recovery 
+It is advisible to backup all 9 partitions before making any changes, in the worst case it is then possible to recover them from
+uboot via ymodem or tftp.
