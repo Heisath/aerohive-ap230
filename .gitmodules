@@ -1,0 +1,3 @@
+[submodule "tools/aerohive-keygen"]
+	path = tools/aerohive-keygen
+	url = https://github.com/Heisath/aerohive-keygen
