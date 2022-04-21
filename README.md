@@ -12,8 +12,7 @@ https://research.aurainfosec.io/hacking-the-hive/
 
 ## Accessing the Console port
 The ap230 has a RJ45 console port which follows the RS232 protocol. Signal levels are -12V to 12V, normal polarity. 9600 baud, 8 bits, 1 stop bit, no parity. \
-Pin assignment is available here: https://docs.aerohive.com/330000/docs/help/english/ng/Content/hardware/pin-assigment.htm \
-View on port:
+[Pin assignment](https://docs.aerohive.com/330000/docs/help/english/ng/Content/hardware/pin-assigment.htm):
 ```
 ---------------------------------
 |              / \              |
@@ -37,11 +36,11 @@ The password for the uboot seems to be `AhNf?d@ta06` .
 
 Beware when changing uboot env, when I used `saveenv` it corrupted the storage and I had to recover it.
 
-Full bootlog in [docs/u-boot.txt]
+Full bootlog in [docs/u-boot.txt](docs/u-boot.txt)
 
 ## Accessing the hidden shell
 To access the busybox shell use the hidden `_shell` command on the aerohive cli.
-The password needed can be generated with the keygen in tools/aerohive-keygen, it requires the serial number.
+The password needed can be generated with the keygen in [tools/aerohive-keygen](tools), it requires the serial number.
 
 ## Partitions
 All data is stored on internal flash memory. It is seperated into 9 partitions:
@@ -84,3 +83,9 @@ nand write 0x81000000 0xf80000 0x5000000
 ## Recovery 
 It is advisible to backup all 9 partitions before making any changes, in the worst case it is then possible to recover them from
 uboot via ymodem or tftp.
+
+## Vendor kernel
+The device in the newest firmware [10.0r8](firmware) is running linux kernel 3.16.36 built with gcc 4.5.3.
+Check out the [vendor kernel config](config/vendor-3.16.36.config) and the [version string](docs/kernel-version.txt): \
+`Linux version 3.16.36 (build@cd102) (gcc version 4.5.3 (crosstool-NG 1.13.4 - buildroot 2012.02) ) #1 SMP PREEMPT Thu Jan 9 23:02:02 PST 2020`
+
