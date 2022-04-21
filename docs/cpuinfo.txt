@@ -1,4 +1,4 @@
-ah-alpha:/tmp/home/admin$ cat /proc/cpuinfo
+$ cat /proc/cpuinfo
 processor       : 0
 model name      : ARMv7 Processor rev 0 (v7l)
 BogoMIPS        : 1990.65

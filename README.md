@@ -37,7 +37,7 @@ The password for the uboot seems to be `AhNf?d@ta06` .
 
 Beware when changing uboot env, when I used `saveenv` it corrupted the storage and I had to recover it.
 
-Full bootlog in docs/u-boot.txt
+Full bootlog in [docs/u-boot.txt]
 
 ## Accessing the hidden shell
 To access the busybox shell use the hidden `_shell` command on the aerohive cli.
