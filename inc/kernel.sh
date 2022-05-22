@@ -100,8 +100,8 @@ build_kernel()
         $makehelp menuconfig
     fi
     $makehelp -j${THREADS} zImage 2>&1 | tee ${current_dir}/zImage.log
-    $makehelp -j${THREADS} ap230.dtb 2>&1 | tee ${current_dir}/dtb.log
-    cat arch/arm/boot/zImage arch/arm/boot/dts/ap230.dtb > zImage_and_dtb
+    $makehelp -j${THREADS} hap230.dtb 2>&1 | tee ${current_dir}/dtb.log
+    cat arch/arm/boot/zImage arch/arm/boot/dts/hap230.dtb > zImage_and_dtb
     mkimage -A arm -O linux -T kernel -C none -a 0x80008000 -e 0x80008000 -n "${kernel_branch}" -d zImage_and_dtb "${output_dir}"/uImage-${kernel_version}
     rm zImage_and_dtb
 
@@ -142,6 +142,8 @@ build_kernel()
 #    rm "${boot_dir}"/uImage
 
     cd "${current_dir}"
+
+    return
 
     # abort point for github runner to keep it from messing with permissions
     if [[ $GHRUNNER == 'on' ]]; then
