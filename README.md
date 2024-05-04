@@ -46,16 +46,16 @@ The password needed can be generated with the keygen in [tools/aerohive-keygen](
 All data is stored on internal flash memory. It is seperated into 9 partitions:
 ```
 cat /proc/mtd
-dev:    size   erasesize  name
-mtd0: 00400000 00020000 "Uboot"
-mtd1: 00040000 00020000 "Uboot Env"
-mtd2: 00040000 00020000 "nvram"
-mtd3: 00060000 00020000 "Boot Info"
-mtd4: 00060000 00020000 "Static Boot Info"
-mtd5: 00040000 00020000 "Hardware Info"
-mtd6: 00a00000 00020000 "Kernel"
-mtd7: 05000000 00020000 "App Image"
-mtd8: 1a080000 00020000 "JFFS2"
+dev:	offset		size		erasesize	name
+mtd0:	00000000	00400000	00020000	"Uboot"
+mtd1:	00400000	00040000	00020000	"Uboot Env"
+mtd2:	00440000	00040000	00020000	"nvram"
+mtd3:	00480000	00060000	00020000	"Boot Info"
+mtd4:	004e0000	00060000	00020000	"Static Boot Info"
+mtd5:	00540000	00040000	00020000	"Hardware Info"
+mtd6:	00580000	00a00000	00020000	"Kernel"
+mtd7:	00f80000	05000000	00020000	"App Image"
+mtd8:	05f80000	1a080000	00020000	"JFFS2"
 ```
 
 The partitions can be read from the busybox shell with `dd` and written from shell with `mtd_debug`. Example for mtd7:

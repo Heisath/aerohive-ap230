@@ -1,0 +1,378 @@
+Booting Linux on physical CPU 0x0
+Initializing cgroup subsys cpu
+Initializing cgroup subsys cpuacct
+Linux version 3.16.36 (build@cd102) (gcc version 4.5.3 (crosstool-NG 1.13.4 - buildroot 2012.02) ) #1 SMP PREEMPT Thu Jan 9 23:02:02 PST 2020
+CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=10c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Machine model: NorthStar (BCM94708)
+Ignoring memory block 0x0 - 0x1000000
+bootconsole [earlycon0] enabled
+Memory policy: Data cache writealloc
+On node 0 totalpages: 65536
+free_area_init_node: node 0, pgdat c06a5a20, node_mem_map cfdfa000
+  Normal zone: 512 pages used for memmap
+  Normal zone: 0 pages reserved
+  Normal zone: 65536 pages, LIFO batch:15
+ah_bbox_mem last content broken, 0-clear. fbffffff
+ah_bbox_mem - kstat_vmstat last content broken, 0-clear.
+L2C: platform provided aux values match the hardware, so have no effect.  Please remove them.
+L2C: platform provided aux values permit register corruption.
+L2C: DT/platform tries to modify or specify cache size
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 dynamic clock gating enabled, standby mode enabled
+L2C-310 Coherent cache controller enabled, 16 ways, 256 kB
+L2C-310 Coherent: CACHE_ID 0x410000c8, AUX_CTRL 0x4a130001
+PERCPU: Embedded 7 pages/cpu @cfde1000 s7648 r8192 d12832 u32768
+pcpu-alloc: s7648 r8192 d12832 u32768 alloc=8*4096
+pcpu-alloc: [0] 0 [0] 1
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 65024
+Kernel command line: root=/dev/ram console=ttyS0,9600 ramdisk_size=70000 cache-sram-size=0x10000 earlyprintk
+PID hash table entries: 1024 (order: 0, 4096 bytes)
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+Memory: 221204K/262144K available (4969K kernel code, 211K rwdata, 1400K rodata, 195K init, 709K bss, 40940K reserved)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+    vmalloc : 0xd0800000 - 0xff000000   ( 744 MB)
+    lowmem  : 0xc0000000 - 0xd0000000   ( 256 MB)
+    modules : 0xbf000000 - 0xc0000000   (  16 MB)
+      .text : 0xc0008000 - 0xc06407d4   (6370 kB)
+      .init : 0xc0641000 - 0xc0671de0   ( 196 kB)
+      .data : 0xc0672000 - 0xc06a6d00   ( 212 kB)
+       .bss : 0xc06a6d0c - 0xc07583ac   ( 710 kB)
+Preemptible hierarchical RCU implementation.
+        Dump stacks of tasks blocking RCU-preempt GP.
+        RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.
+        Offload RCU callbacks from all CPUs
+        Offload RCU callbacks from CPUs: 0-1.
+RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+NR_IRQS:16 nr_irqs:16 16
+sched_clock: 32 bits at 1kHz, resolution 1000000ns, wraps every 2147483648000000ns
+Console: colour dummy device 80x30
+Calibrating delay loop... 1990.65 BogoMIPS (lpj=995328)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Initializing cgroup subsys devices
+Initializing cgroup subsys freezer
+Initializing cgroup subsys net_cls
+Initializing cgroup subsys blkio
+CPU: Testing write buffer coherency: ok
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x804bab88 - 0x804babbc
+CPU1: Booted secondary processor
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+Brought up 2 CPUs
+SMP: Total of 2 processors activated (3981.31 BogoMIPS).
+devtmpfs: initialized
+pinctrl core: initialized pinctrl subsystem
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+cpuidle: using governor menu
+L2C-310 Coherent cache controller enabled, 16 ways, 256 kB
+L2C-310 Coherent: CACHE_ID 0x410000c8, AUX_CTRL 0x4a130001
+NVRAM already initialized
+NVRAM already initialized
+PCI: no core
+PCI: no core
+PCI: scanning bus 0
+PCI host bridge to bus 0000:00
+pci_bus 0000:00: root bus resource [io  0x0000-0xfffff]
+pci_bus 0000:00: root bus resource [mem 0x00000000-0xffffffff]
+pci_bus 0000:00: root bus resource [bus 00-ff]
+pci 0000:00:00.0: [14e4:0800] type 00 class 0x050100
+pci 0000:00:00.0: reg 0x10: [mem 0x18000000-0x18000fff]
+pci 0000:00:00.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:01.0: [14e4:050b] type 00 class 0xffffff
+pci 0000:00:01.0: reg 0x10: [mem 0x18001000-0x18001fff]
+pci 0000:00:01.0: reg 0x14: [mem 0x18002000-0x18002fff]
+pci 0000:00:01.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:02.0: [14e4:0502] type 00 class 0xffffff
+pci 0000:00:02.0: reg 0x10: [mem 0x1802c000-0x1802cfff]
+pci 0000:00:02.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:03.0: [14e4:4715] type 00 class 0x020000
+pci 0000:00:03.0: reg 0x10: [mem 0x18024000-0x18024fff]
+pci 0000:00:03.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:04.0: [14e4:4715] type 00 class 0x020000
+pci 0000:00:04.0: reg 0x10: [mem 0x18025000-0x18025fff]
+pci 0000:00:04.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:05.0: [14e4:4715] type 00 class 0x020000
+pci 0000:00:05.0: reg 0x10: [mem 0x18026000-0x18026fff]
+pci 0000:00:05.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:06.0: [14e4:4715] type 00 class 0x020000
+pci 0000:00:06.0: reg 0x10: [mem 0x18027000-0x18027fff]
+pci 0000:00:06.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:07.0: [14e4:0501] type 00 class 0xffffff
+pci 0000:00:07.0: reg 0x10: [mem 0x18012000-0x18012fff]
+pci 0000:00:07.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:08.0: [14e4:0501] type 00 class 0xffffff
+pci 0000:00:08.0: reg 0x10: [mem 0x18013000-0x18013fff]
+pci 0000:00:08.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:09.0: [14e4:0501] type 00 class 0xffffff
+pci 0000:00:09.0: reg 0x10: [mem 0x18014000-0x18014fff]
+pci 0000:00:09.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0a.0: [14e4:0510] type 00 class 0xffffff
+pci 0000:00:0a.0: reg 0x10: [mem 0x1800b000-0x1800bfff]
+pci 0000:00:0a.0: reg 0x14: [mem 0x1800c000-0x1800cfff]
+pci 0000:00:0a.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0b.0: [14e4:471a] type 00 class 0x0c0310
+pci 0000:00:0b.0: reg 0x10: [mem 0x18022000-0x18022fff]
+pci 0000:00:0b.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0b.1: [14e4:471a] type 00 class 0x0c0320
+pci 0000:00:0b.1: reg 0x10: [mem 0x18021000-0x18021fff]
+pci 0000:00:0b.1: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0c.0: [14e4:472a] type 00 class 0x0c0330
+pci 0000:00:0c.0: reg 0x10: [mem 0x18023000-0x18023fff]
+pci 0000:00:0c.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0d.0: [14e4:0503] type 00 class 0xffffff
+pci 0000:00:0d.0: reg 0x10: [mem 0x18020000-0x18020fff]
+pci 0000:00:0d.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0e.0: [14e4:4711] type 00 class 0x040100
+pci 0000:00:0e.0: reg 0x10: [mem 0x1802a000-0x1802afff]
+pci 0000:00:0e.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:0f.0: [14e4:0506] type 00 class 0xffffff
+pci 0000:00:0f.0: reg 0x10: [mem 0x18210000-0x1821ffff]
+pci 0000:00:0f.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:10.0: [14e4:0507] type 00 class 0xffffff
+pci 0000:00:10.0: reg 0x10: [mem 0x18010000-0x18010fff]
+pci 0000:00:10.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:11.0: [14e4:0508] type 00 class 0xffffff
+pci 0000:00:11.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:12.0: [14e4:0509] type 00 class 0xffffff
+pci 0000:00:12.0: reg 0x10: [mem 0x18028000-0x18028fff]
+pci 0000:00:12.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+pci 0000:00:13.0: [14e4:050a] type 00 class 0xffffff
+pci 0000:00:13.0: reg 0x10: [mem 0x18029000-0x18029fff]
+pci 0000:00:13.0: reg 0x30: [mem 0x00000000-0x000007ff pref]
+PCI: Fixing up bus 0
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 4 bytes.
+MSI assigned to 159
+MSI assigned to 160
+MSI assigned to 161
+MSI assigned to 162
+MSI assigned to 164
+iproc-pcie 18012000.pcie: PCI host bridge to bus 0001:00
+pci_bus 0001:00: root bus resource [io  0x0000-0xffff]
+pci_bus 0001:00: root bus resource [mem 0x08000000-0x0fffffff]
+pci_bus 0001:00: root bus resource [bus 00-ff]
+pci 0001:00:00.0: [14e4:8012] type 01 class 0x060400
+pci 0001:00:00.0: PME# supported from D0 D3hot D3cold
+PCI: Fixing up bus 0
+PCI: bus0: Fast back to back transfers disabled
+pci 0001:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0001:01:00.0: [14e4:43a1] type 00 class 0x028000
+pci 0001:01:00.0: reg 0x10: [mem 0x00000000-0x00007fff 64bit]
+pci 0001:01:00.0: reg 0x18: [mem 0x00000000-0x001fffff 64bit]
+pci 0001:01:00.0: supports D1 D2
+pci 0001:01:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+PCI: Fixing up bus 1
+PCI: bus1: Fast back to back transfers disabled
+pci_bus 0001:01: busn_res: [bus 01-ff] end is updated to 01
+pci 0001:00:00.0: BAR 8: assigned [mem 0x08000000-0x082fffff]
+pci 0001:01:00.0: BAR 2: assigned [mem 0x08000000-0x081fffff 64bit]
+pci 0001:01:00.0: BAR 0: assigned [mem 0x08200000-0x08207fff 64bit]
+pci 0001:00:00.0: PCI bridge to [bus 01]
+pci 0001:00:00.0:   bridge window [mem 0x08000000-0x082fffff]
+pci 0001:00:00.0: Max Payload Size set to  256/ 512 (was  512), Max Read Rq  512
+pci 0001:01:00.0: Max Payload Size set to  256/ 256 (was  128), Max Read Rq  512
+pci 0001:00:00.0: PCI bridge to [bus 01]
+pci 0001:00:00.0:   bridge window [mem 0x08000000-0x082fffff]
+pci_bus 0001:00: resource 4 [io  0x0000-0xffff]
+pci_bus 0001:00: resource 5 [mem 0x08000000-0x0fffffff]
+pci_bus 0001:01: resource 1 [mem 0x08000000-0x082fffff]
+MSI assigned to 165
+MSI assigned to 166
+MSI assigned to 167
+MSI assigned to 168
+MSI assigned to 170
+iproc-pcie 18013000.pcie: PCI host bridge to bus 0002:00
+pci_bus 0002:00: root bus resource [io  0x0000-0xffff]
+pci_bus 0002:00: root bus resource [mem 0x40000000-0x47ffffff]
+pci_bus 0002:00: root bus resource [bus 00-ff]
+pci 0002:00:00.0: [14e4:8012] type 01 class 0x060400
+pci 0002:00:00.0: PME# supported from D0 D3hot D3cold
+PCI: Fixing up bus 0
+PCI: bus0: Fast back to back transfers disabled
+pci 0002:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+pci 0002:01:00.0: [14e4:43a2] type 00 class 0x028000
+pci 0002:01:00.0: reg 0x10: [mem 0x00000000-0x00007fff 64bit]
+pci 0002:01:00.0: reg 0x18: [mem 0x00000000-0x001fffff 64bit]
+pci 0002:01:00.0: supports D1 D2
+pci 0002:01:00.0: PME# supported from D0 D1 D2 D3hot D3cold
+PCI: Fixing up bus 1
+PCI: bus1: Fast back to back transfers disabled
+pci_bus 0002:01: busn_res: [bus 01-ff] end is updated to 01
+pci 0002:00:00.0: BAR 8: assigned [mem 0x40000000-0x402fffff]
+pci 0002:01:00.0: BAR 2: assigned [mem 0x40000000-0x401fffff 64bit]
+pci 0002:01:00.0: BAR 0: assigned [mem 0x40200000-0x40207fff 64bit]
+pci 0002:00:00.0: PCI bridge to [bus 01]
+pci 0002:00:00.0:   bridge window [mem 0x40000000-0x402fffff]
+pci 0002:00:00.0: Max Payload Size set to  256/ 512 (was  512), Max Read Rq  512
+pci 0002:01:00.0: Max Payload Size set to  256/ 256 (was  128), Max Read Rq  512
+pci 0001:00:00.0: PCI bridge to [bus 01]
+pci 0001:00:00.0:   bridge window [mem 0x08000000-0x082fffff]
+pci_bus 0001:00: resource 4 [io  0x0000-0xffff]
+pci_bus 0001:00: resource 5 [mem 0x08000000-0x0fffffff]
+pci_bus 0001:01: resource 1 [mem 0x08000000-0x082fffff]
+pci 0002:00:00.0: PCI bridge to [bus 01]
+pci 0002:00:00.0:   bridge window [mem 0x40000000-0x402fffff]
+pci_bus 0002:00: resource 4 [io  0x0000-0xffff]
+pci_bus 0002:00: resource 5 [mem 0x40000000-0x47ffffff]
+pci_bus 0002:01: resource 1 [mem 0x40000000-0x402fffff]
+MSI assigned to 171
+MSI assigned to 172
+MSI assigned to 173
+MSI assigned to 174
+MSI assigned to 175
+MSI assigned to 176
+iproc-pcie 18014000.pcie: no PCIe device detected on bus 3, skipping...
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+cfg80211: Calling CRDA to update world regulatory domain
+Switched to clocksource arm_global_timer
+NET: Registered protocol family 2
+TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+TCP bind hash table entries: 2048 (order: 2, 16384 bytes)
+TCP: Hash tables configured (established 2048 bind 2048)
+TCP: reno registered
+UDP hash table entries: 256 (order: 1, 8192 bytes)
+UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+NET: Registered protocol family 1
+PCI: CLS 32 bytes, default 32
+Trying to unpack rootfs image as initramfs...
+rootfs image is not initramfs (junk in compressed archive); looks like an initrd
+Freeing initrd memory: 27972K (c2006000 - c3b57000)
+Registering iproc_pmu_device
+CPU PMU: probing PMU on CPU 1
+hw perfevents: enabled with ARMv7 Cortex-A9 PMU driver, 7 counters available
+futex hash table entries: 512 (order: 2, 16384 bytes)
+audit: initializing netlink subsys (disabled)
+audit: type=2000 audit(1.109:1): initialized
+VFS: Disk quotas dquot_6.5.2
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+ntfs: driver 2.1.30 [Flags: R/O].
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+fuse init (API version 7.23)
+msgmni has been set to 486
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+io scheduler noop registered (default)
+io scheduler deadline registered
+Serial: 8250/16550 driver, 2 ports, IRQ sharing enabled
+console [ttyS0] disabled
+18000300.serial: ttyS0 at MMIO 0x18000300 (irq = 117, base_baud = 3906250) is a 16550
+console [ttyS0] enabled
+bootconsole [earlycon0] disabled
+18000400.serial: ttyS1 at MMIO 0x18000400 (irq = 117, base_baud = 3906250) is a 16550
+brd: module loaded
+loop: module loaded
+iproc_nand: auto-init success
+nand: device found, Manufacturer ID: 0x01, Chip ID: 0xdc
+nand: AMD/Spansion S34ML04G1
+nand: 512MiB, SLC, page size: 2048, OOB size: 64
+nand: device found, Manufacturer ID: 0x01, Chip ID: 0xdc
+nand: AMD/Spansion S34ML04G1
+nand: 512MiB, SLC, page size: 2048, OOB size: 64
+iproc_nand: timing mode 0
+iproc_nand: invalid bootloader settings
+iproc_nand straps: page 0x1 type 0x2
+iproc_nand: following strap settings
+NAND 8-bit 512MiB total, 128KiB blocks, 2KiB pages
+     4bit/512B BCH-ECC 16B/512B OOB
+iproc_nand: user oob per page: 35 bytes (4 steps)
+9 ofpart partitions found on MTD device iproc_nand
+Creating 9 MTD partitions on "iproc_nand":
+0x000000000000-0x000000400000 : "Uboot"
+0x000000400000-0x000000440000 : "Uboot Env"
+0x000000440000-0x000000480000 : "nvram"
+0x000000480000-0x0000004e0000 : "Boot Info"
+0x0000004e0000-0x000000540000 : "Static Boot Info"
+0x000000540000-0x000000580000 : "Hardware Info"
+0x000000580000-0x000000f80000 : "Kernel"
+0x000000f80000-0x000005f80000 : "App Image"
+0x000005f80000-0x000020000000 : "JFFS2"
+iproc_nand: NAND controller driver is loaded
+PPP generic driver version 2.4.2
+NET: Registered protocol family 24
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-pci: EHCI PCI platform driver
+ehci-pci 0000:00:0b.1: EHCI Host Controller
+ehci-pci 0000:00:0b.1: new USB bus registered, assigned bus number 1
+ehci-pci 0000:00:0b.1: irq 111, io mem 0x18021000
+ehci-pci 0000:00:0b.1: USB 0.0 started, EHCI 1.00
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 2 ports detected
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci-pci: OHCI PCI platform driver
+ohci-pci 0000:00:0b.0: OHCI PCI host controller
+ohci-pci 0000:00:0b.0: new USB bus registered, assigned bus number 2
+ohci-pci 0000:00:0b.0: irq 111, io mem 0x18022000
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 2 ports detected
+uhci_hcd: USB Universal Host Controller Interface driver
+usbcore: registered new interface driver cdc_acm
+cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+usbcore: registered new interface driver usbserial
+mousedev: PS/2 mouse device common for all mice
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+oprofile: using arm/armv7-ca9
+Netfilter messages via NETLINK v0.30.
+nfnl_acct: registering with nfnetlink.
+nf_conntrack version 0.5.0 (3893 buckets, 15572 max)
+ctnetlink v0.93: registering with nfnetlink.
+nf_tables: (c) 2007-2009 Patrick McHardy <kaber@trash.net>
+nf_tables_compat: (c) 2012 Pablo Neira Ayuso <pablo@netfilter.org>
+IPVS: Registered protocols ()
+IPVS: Connection hash table configured (size=4096, memory=32Kbytes)
+IPVS: Creating netns size=784 id=0
+IPVS: ipvs loaded.
+ipip: IPv4 over IPv4 tunneling driver
+ip_tables: (C) 2000-2006 Netfilter Core Team
+ipt_CLUSTERIP: ClusterIP Version 0.8 loaded successfully
+TCP: cubic registered
+NET: Registered protocol family 10
+NET: Registered protocol family 17
+NET: Registered protocol family 15
+Registering SWP/SWPB emulation handler
+RAMDISK: squashfs filesystem found at block 0
+RAMDISK: Loading 27975KiB [1 disk] into ram disk... done.
+VFS: Mounted root (squashfs filesystem) readonly on device 1:0.
+devtmpfs: mounted
+Freeing unused kernel memory: 192K (c0641000 - c0671000)
+jffs2: Empty flash at 0x002c90cc ends at 0x002c9800
+jffs2: Empty flash at 0x02102820 ends at 0x02103000
+jffs2: Empty flash at 0x0ff92d2c ends at 0x0ff93000
+jffs2: Empty flash at 0x13ef0b84 ends at 0x13ef1000
+jffs2: Empty flash at 0x1905d53c ends at 0x1905d800
+jffs2: notice: (61) check_node_data: wrong data CRC in data node at 0x0ff92618: read 0x8349f877, calculated 0x9f7bfc65.
+[systop]: initializing AH dev for ifp lo!
+[systop]: initializing AH dev for ifp tunl0!
+init sys char device
+[systop]: Initializing configuration shared memory region
+[dot1x]: 8021x_mac_tbl_init hash size = 256
+[dot1x]: 8021x_mac_tbl_init finished hash size = 256
+ah_net: module license 'unspecified' taints kernel.
+Disabling lock debugging due to kernel taint
+jffs2: notice: (61) check_node_data: wrong data CRC in data node at 0x13ef0134: read 0xb4d65bc1, calculated 0x7188d2b0.
+[mpi]: kmod(KEVENT) open mpi channel
+[mpi]: ignore event 0x5 from lo
+[mpi]: ignore event 0x1 from lo
+[mpi]: ignore event 0x5 from tunl0
+POE Input Detection -> DC
+[board]: init board char device
+[security]: Genuine Aerohive Access Point Hardware.
+[security]: hwauth init success.
+jffs2: notice: (61) check_node_data: wrong data CRC in data node at 0x149711a0: read 0x26e36f17, calculated 0xfd8539b9.
+[security]: tpm init success.
+[security]: init security char device
+gmac_var_init: NAPI2_POLL mode
+Jumbo disabled
+Total Memory: 268435456B, Max number of active packets: 11650 cache->name: kmalloc-2304
+NVRAM already initialized
+NVRAM already initialized
