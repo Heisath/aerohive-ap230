@@ -1,0 +1,13 @@
+#!/bin/busybox sh
+/bin/busybox --install
+
+printf '######### RUNNING INITRAMFS ########'
+
+
+# initialise
+mount -t devtmpfs none /dev
+mount -t proc none /proc
+mount -t sysfs none /sys
+
+exec /bin/busybox sh
+

@@ -19,7 +19,7 @@ build_kernel()
 
     # generate output directory
     mkdir -p "${output_dir}"
-#    mkdir -p "${boot_dir}"
+    mkdir -p "${boot_dir}"
 
     cleaned_or_new=0
 
@@ -99,19 +99,19 @@ build_kernel()
     if [ ${ALLOW_KERNEL_CONFIG_CHANGES} = 'on' ]; then
         $makehelp menuconfig
     fi
-    $makehelp -j${THREADS} zImage 2>&1 | tee ${current_dir}/zImage.log
-    $makehelp -j${THREADS} hap230.dtb 2>&1 | tee ${current_dir}/dtb.log
+    $makehelp -j${THREADS} zImage 2>&1 | tee ${output_dir}/kernel.log
+    $makehelp -j${THREADS} hap230.dtb 2>&1 | tee -a ${output_dir}/kernel.log
     cat arch/arm/boot/zImage arch/arm/boot/dts/hap230.dtb > zImage_and_dtb
-    mkimage -A arm -O linux -T kernel -C none -a 0x80008000 -e 0x80008000 -n "${kernel_branch}" -d zImage_and_dtb "${output_dir}"/uImage-${kernel_version}
+    mkimage -A arm -O linux -T kernel -C none -a 0x80008000 -e 0x80008000 -n "${kernel_branch}" -d zImage_and_dtb "${boot_dir}"/uImage-${kernel_version} 2>&1 | tee -a ${output_dir}/kernel.log
     rm zImage_and_dtb
 
-    $makehelp -j${THREADS} modules 2>&1 | tee ${current_dir}/modules.log
-    $makehelp -j${THREADS} INSTALL_MOD_PATH="${output_dir}" modules_install 2>&1 | tee -a ${current_dir}/modules.log
+    $makehelp -j${THREADS} modules 2>&1 | tee ${output_dir}/modules.log
+    $makehelp -j${THREADS} INSTALL_MOD_PATH="${output_dir}" modules_install 2>&1 | tee -a ${output_dir}/modules.log
 
     cd "${current_dir}"
 
     echo "### Copying new kernel config to output"
-    cp "${kernel_dir}"/.config "${output_dir}"/linux-${kernel_version}.config
+    cp "${kernel_dir}"/.config "${boot_dir}"/linux-${kernel_version}.config
 
 #    echo "### Adding default ramdisk to output"
 #    cp prebuilt/uRamdisk "${boot_dir}"
@@ -122,19 +122,19 @@ build_kernel()
 
 #    cp "${boot_dir}"/uImage-${kernel_version} "${boot_dir}"/uImage
 
-#    echo "### Cleanup and tar results"
-#    rm "${output_dir}"/lib/modules/*/source
-#    rm "${output_dir}"/lib/modules/*/build
+    echo "### Cleanup and tar results"
+    rm "${output_dir}"/lib/modules/*/source
+    rm "${output_dir}"/lib/modules/*/build
 
     # tar and compress modules for easier transport
-#    cd "${output_dir}"/lib/modules/
-#    if [ -d "${kernel_version}" ]; then
-#    	tar -czf "${output_dir}"/modules-${kernel_version}.tar.gz "${kernel_version}"
-#    elif [ -d "${kernel_version}"+ ]; then
-#    	tar -czf "${output_dir}"/modules-${kernel_version}+.tar.gz "${kernel_version}"+
-#    else
-#    	echo "### Failed to tar up modules folder! It might be missing from the output."
-#    fi
+    cd "${output_dir}"/lib/modules/
+    if [ -d "${kernel_version}" ]; then
+    	tar -czf "${output_dir}"/modules-${kernel_version}.tar.gz "${kernel_version}"
+    elif [ -d "${kernel_version}"+ ]; then
+    	tar -czf "${output_dir}"/modules-${kernel_version}+.tar.gz "${kernel_version}"+
+    else
+    	echo "### Failed to tar up modules folder! It might be missing from the output."
+    fi
 
     cd "${output_dir}"
 #    tar -czf "${output_dir}"/boot-${kernel_version}.tar.gz boot/uRamdisk boot/uImage-${kernel_version} boot/uImage boot/linux-${kernel_version}.config

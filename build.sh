@@ -21,7 +21,7 @@ source "${current_dir}"/inc/kernel.sh
 ############################################################
 output_dir="${current_dir}/output"
 rootfs_dir="${output_dir}/rootfs"
-#boot_dir="${output_dir}/boot"
+boot_dir="${output_dir}/boot"
 cache_dir="${current_dir}/cache"
 
 current_user="$(stat --format %U "${current_dir}"/.git)"
